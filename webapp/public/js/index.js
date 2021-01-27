@@ -1,5 +1,5 @@
 var algorithms = {
-    "1": "TF-IDF",
+    "1": "/tfidf/",
     "2": "Word2Vec",
     "3": "Doc2Vec",
     "4": "BERT",
@@ -31,9 +31,10 @@ document.getElementById("alg-sm").addEventListener("change", (ev)=>{
 
 document.getElementById('search-btn').addEventListener('click', (ev) => {
     document.getElementById('searchInputSm').value = document.getElementById('searchInput').value;
-    alert(`
-    Searched term: ${document.getElementById('searchInput').value}
-    Algorithm type: ${algorithms[getAlg()]}`);
+    // alert(`
+    // Searched term: ${document.getElementById('searchInput').value}
+    // Algorithm type: ${algorithms[getAlg()]}`);
+    axios.get(`${algorithms[getAlg()]}${document.getElementById('searchInput').value}`).then(e => alert(JSON.stringify(e.data, null, 2)))
     showResults();
 
 })
