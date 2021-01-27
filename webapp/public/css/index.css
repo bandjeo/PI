@@ -1,0 +1,15 @@
+.br {
+    border-radius: 1.5rem !important;
+}
+
+.h-20 {
+    height: 20%!important
+}
+
+.offset-lg-45 {
+    margin-left: 37.5%;
+}
+
+.cursor-pointer{
+    cursor: pointer;
+}
