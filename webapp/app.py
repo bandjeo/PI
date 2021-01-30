@@ -1,5 +1,6 @@
 from flask import Flask, request, send_from_directory
 import webapp.services.tfidf_service as tfidf_service
+import webapp.services.elastic_service as elastic_service
 from webapp.services.common import find_law_title
 app = Flask(__name__,  static_url_path='')
 
@@ -24,6 +25,11 @@ def tfidf(query):
         })
 
     return { 'data': data}
+
+@app.route('/elastic/<query>')
+def elastic(query):
+    return { 'data': elastic_service.sorch(query) }
+
 
 if __name__ == "__main__":
     app.run(debug=True)
