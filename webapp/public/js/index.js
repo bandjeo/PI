@@ -3,13 +3,13 @@ var algorithms = {
     "2": "Word2Vec",
     "3": "Doc2Vec",
     "4": "BERT",
-    "5": "Elastic search"
+    "5": "/elastic/"
 }
 
 var showResults = (data) => {
     document.getElementById('no-results').style.display = 'none';
 
-    document.getElementById('result-container').innerHTML = data.map(e => `
+    document.getElementById('result-container').innerHTML = data.length===0? '<h3 class="mx-5 my-4">No results found</h3>':data.map(e => `
                     <div class="mb-4 col-11 offset-1">
                         <div class="col-12 d-block text-muted small">/public/acts/${e.fileName}</div>
                         <a class="col-12 mt-1 d-block h4 cursor-pointer" target="_blank" href="/public/acts/${e.fileName}" >${e.title}</a>
@@ -49,9 +49,12 @@ document.getElementById('search-btn').addEventListener('click', (ev) => {
 })
 
 document.getElementById('search-btn-sm').addEventListener('click', (ev) => {
-    alert(`
-    Searched term: ${document.getElementById('searchInputSm').value}
-    Algorithm type: ${algorithms[getAlg()]}`);
+    // alert(`
+    // Searched term: ${document.getElementById('searchInputSm').value}
+    // Algorithm type: ${algorithms[getAlg()]}`);
+    axios.get(`${algorithms[getAlg()]}${document.getElementById('searchInputSm').value}`).then(e => {
+        showResults(e.data.data);
+    })
 })
 
 document.getElementById('logo').addEventListener('click', () => location.reload());
