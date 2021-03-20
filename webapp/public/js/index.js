@@ -1,7 +1,7 @@
 var algorithms = {
     "1": "/tfidf/",
-    "2": "Word2Vec",
-    "3": "Doc2Vec",
+    "2": "/word2vec/",
+    "3": "/doc2vec/",
     "4": "BERT",
     "5": "/elastic/"
 }

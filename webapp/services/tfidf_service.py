@@ -7,21 +7,20 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
 dataset_path = './public/acts'
+X, tf_idf_vectorizer = None, None
+dataset = {}
 
-def sorch(query):
-    dataset = {}
-    TAG_RE = re.compile(r'<[^>]+>')
-    for file_path in os.listdir(dataset_path):
-        with codecs.open(os.path.join(dataset_path, file_path), 'r', encoding='utf-8') as f:
-            data = f.read()
-            data = TAG_RE.sub('', data)
-            data = " ".join(data.split())
-            dataset[file_path] = data
 
-    corpus = list(dataset.values())
+def init_tfidf(common_dataset):
+    print('THE INIT OF GLORY PLS WORK')
+    global X, tf_idf_vectorizer, dataset
+    dataset = common_dataset
+
+    corpus = list(" ".join(word_list) for word_list in dataset.values())
     X, tf_idf_vectorizer = create_tfidf_features(corpus)
 
-    
+
+def sorch(query):
     search_start = time.time()
     sim_vecs, cosine_similarities = calculate_similarity(X, tf_idf_vectorizer, query)
     search_time = time.time() - search_start
