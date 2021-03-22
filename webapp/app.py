@@ -3,15 +3,22 @@ import webapp.services.tfidf_service as tfidf_service
 import webapp.services.elastic_service as elastic_service
 import webapp.services.word2vec_service as word2vec_service
 import webapp.services.doc2vec_service as doc2vec_service
+import webapp.services.bert_service as bert_service
 from webapp.services.common import find_law_title
 from webapp.services.common import load_dataset
+from webapp.services.common import dataset_path
 app = Flask(__name__,  static_url_path='')
 
-dataset = load_dataset()
+# dataset = load_dataset()
 
-doc2vec_service.init_doc2vec(dataset)
-tfidf_service.init_tfidf(dataset)
-word2vec_service.init_word2vec(dataset)
+print("Initializing bert model")
+bert_service.init_bert(dataset_path)
+print("Initializing doc2vec model")
+# doc2vec_service.init_doc2vec(load_dataset())
+print("Initializing tfidf model")
+# tfidf_service.init_tfidf(load_dataset())
+print("Initializing word2vec model")
+# word2vec_service.init_word2vec(load_dataset())
 
 @app.route('/')
 def hello_world():
@@ -63,6 +70,19 @@ def doc2vec(query):
 
     return { 'data': data}
 
+@app.route('/bert/<query>')
+def bert(query):
+    file_names = bert_service.sorch(query)
+    data = []
+    for file_name in file_names:
+        title, sample = find_law_title(file_name)
+        data.append({
+            'fileName': file_name,
+            'title': title,
+            'sample': sample
+        })
+
+    return { 'data': data}
 
 @app.route('/elastic/<query>')
 def elastic(query):

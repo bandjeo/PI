@@ -74,4 +74,4 @@ def sorch(query):
     search_time = time.time() - search_start
     print("search time: {:.2f} ms".format(search_time * 1000))
     print()
-    show_similar_documents(list(dataset.keys()), cosine_similarities, sim_vecs)
+    return show_similar_documents(list(dataset.keys()), cosine_similarities, sim_vecs)
