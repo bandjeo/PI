@@ -13,3 +13,7 @@
 .cursor-pointer{
     cursor: pointer;
 }
+
+#themec {
+    height: 100%;
+}
