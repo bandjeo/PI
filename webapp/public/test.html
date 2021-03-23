@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="/public/css/test.css">
+        <link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.css">
+    </head>
+    <body>
+        <div class="mt-5"></div>
+        <div id="container" class="container-fluid">
+            <div class="row">
+                
+                <img id="rot" class="col-2 offset-5 mb-4" src="/public/images/logo.png">
+                <div class="form-group col-4 offset-4 mb-5">
+                    <input type="text" class="px-4 form-control br" id="searchInputSm" aria-describedby="searchHelp" placeholder="Search">
+                    <div id="sorch" class="btn btn-primary col-2 offset-5 mt-3">Sorch</div>
+                </div>
+                <div id="qc">
+                    
+                </div>
+
+                <div id="save" class="btn btn-success col-2 offset-5 mt-3">Save</div>
+
+            </div>
+            
+        </div>
+        <div id="blurred" style="display: none; opacity:0; position: absolute; left: 0; top: 0; width: 100vw; height: 100vh; filter: blur(3px); background-color: #333;">
+        </div>
+        <img id="sorchen" src="/public/images/logo.png" width="500" style="position: absolute; left: 710; top: 390; opacity: 0;">
+    </body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+    <script src="/public/js/test.js"></script>
+</html>

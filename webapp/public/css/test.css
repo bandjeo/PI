@@ -1,0 +1,49 @@
+.question {
+    border: 4px solid #222;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -webkit-touch-callout : none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none; 
+    cursor: pointer;
+}
+
+.selected {
+    border: 4px solid #66ff99;
+    border-radius: 5px;
+}
+
+.question:hover {
+    cursor: pointer;
+    border-top: 4px  solid #66ccff;
+    border-right: 4px solid #66ccff;
+    border-bottom: 4px solid #66ccff;
+    border-left: 4px solid #66ccff;
+    border-radius: 5px;
+}
+
+.selected:hover {
+    border-top: 4px solid  #33cc99;
+    border-right: 4px solid  #33cc99;
+    border-bottom: 4px solid #33cc99;
+    border-left: 4px solid #33cc99;
+}
+h3 { 
+    color: #3399cc;
+}
+
+
+.selected > h3 {
+    color: #33cc99 !important;
+}
+
+#sorchen {
+    transition: all 1s;
+}
+#rot {
+    transition: all 1s;
+}
+#blurred {
+    transition: all 1s;
+}

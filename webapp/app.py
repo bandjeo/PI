@@ -11,14 +11,14 @@ app = Flask(__name__,  static_url_path='')
 
 # dataset = load_dataset()
 
-# print("Initializing bert model")
-# bert_service.init_bert(dataset_path)
+print("Initializing bert model")
+bert_service.init_bert(dataset_path)
 print("Initializing doc2vec model")
 doc2vec_service.init_doc2vec(dataset_path)
-# print("Initializing tfidf model")
-# tfidf_service.init_tfidf(load_dataset())
-# print("Initializing word2vec model")
-# word2vec_service.init_word2vec(dataset_path)
+print("Initializing tfidf model")
+tfidf_service.init_tfidf(load_dataset())
+print("Initializing word2vec model")
+word2vec_service.init_word2vec(dataset_path)
 
 @app.route('/')
 def hello_world():
