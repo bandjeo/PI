@@ -5,23 +5,33 @@
     </head>
     <body>
         <div class="mt-5"></div>
-        <div id="container" class="container-fluid">
+        <div class="container-fluid">
             <div class="row">
-                
-                <img id="rot" class="col-2 offset-5 mb-4" src="/public/images/logo.png">
-                <div class="form-group col-4 offset-4 mb-5">
-                    <input type="text" class="px-4 form-control br" id="searchInputSm" aria-describedby="searchHelp" placeholder="Search">
-                    <div id="sorch" class="btn btn-primary col-2 offset-5 mt-3">Sorch</div>
-                </div>
-                <div id="qc">
-                    
-                </div>
-
-                <div id="save" class="btn btn-success col-2 offset-5 mt-3">Save</div>
-
-            </div>
+                <div class="col-8">
+                    <div id="container" class="container-fluid">
+                        <div class="row">
+                            <img id="rot" class="col-2 offset-5 mb-4" src="/public/images/logo.png">
+                            <div class="form-group col-4 offset-4 mb-5">
+                                <input type="text" class="px-4 form-control br" id="searchInputSm" aria-describedby="searchHelp" placeholder="Search">
+                                <div id="sorch" class="btn btn-primary col-2 offset-5 mt-3">Sorch</div>
+                            </div>
+                            <div id="qc">
+                                
+                            </div>
             
+            
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="col-4 blat px-5 py-1" >
+                    
+                    <div id="sorter"></div>
+                    <div id="save" class="btn btn-success col-10 offset-1 mt-3 h-100">Save</div>
+                </div>
+            </div>
         </div>
+        
         <div id="blurred" style="display: none; opacity:0; position: absolute; left: 0; top: 0; width: 100vw; height: 100vh; filter: blur(3px); background-color: #333;">
         </div>
         <img id="sorchen" src="/public/images/logo.png" width="500" style="position: absolute; left: 710; top: 390; opacity: 0;">

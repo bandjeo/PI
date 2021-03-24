@@ -41,9 +41,22 @@ h3 {
 #sorchen {
     transition: all 1s;
 }
-#rot {
+#rotcontainer {
     transition: all 1s;
 }
 #blurred {
     transition: all 1s;
+}
+
+.blat {
+    border-left: 1px solid #999;
+}
+
+.border-mysuccess {
+    border: 4px solid #33cc99;
+
+}
+
+#sorchen {
+    pointer-events: none !important;
 }

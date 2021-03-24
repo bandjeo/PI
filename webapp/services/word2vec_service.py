@@ -69,7 +69,8 @@ def query_to_vec(query, model):
         wordvecs_mean = np.array(wordvecs).sum(axis=0) / float(len(wordvecs))
         return wordvecs_mean
     else:
-        raise ValueError('No words from the query are present in the model vocabulary') 
+        return np.zeros(300)
+        # raise ValueError('No words from the query are present in the model vocabulary') 
 
 
 def calculate_similarity(embeddings, model, query, top_documents=10, top_sentences=3):
