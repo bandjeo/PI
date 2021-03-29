@@ -9,7 +9,7 @@ Potrebni alati:
 - Pokrenuti *elasticsearch.bat* iz bin direktorijuma instalacije *Elasticsearch*
 - Pokrenuti *migrate.py* iz direktorijuma *Elasticsearch*
 - Unutar direktorijuma *webapp* pokrenuti komandu `flask run`
-- Frontend aplikacije se nalazi na http://localhost:5000/public/index.html
+- Frontend aplikacije se nalazi na `http://localhost:5000/public/index.html`
 
 ### Upotreba aplikacije
 - Izabrati pretraživač iz liste pretraživača
