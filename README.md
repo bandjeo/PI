@@ -2,7 +2,7 @@
 
 Potrebni alati:
 - Python 3.8.3+ (Pip)
-- [https://www.elastic.co/](Elasticsearch)
+- [Elasticsearch](https://www.elastic.co/)
 
 ### Pokretanje:
 - Instalirati potrebne pakete iz requirements.txt `pip install -r requirements.txt`
